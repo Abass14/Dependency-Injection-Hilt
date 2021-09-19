@@ -1,5 +1,6 @@
 package com.example.dependencyinjection.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -25,6 +26,7 @@ class MainViewModel @Inject constructor(private val repository: UserRepository) 
             override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
                 if (response.isSuccessful){
                     _getUserLiveData.postValue(response.body())
+                    Log.d("ViewModel", "${response.body()}")
                 }else{
                     _getUserLiveData.postValue(null)
                 }

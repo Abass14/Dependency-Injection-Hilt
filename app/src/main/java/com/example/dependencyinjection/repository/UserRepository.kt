@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
+import javax.inject.Named
 
 class UserRepository @Inject constructor(private val userApi: RetroService) {
 
